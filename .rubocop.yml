@@ -13,147 +13,147 @@ AllCops:
   TargetRubyVersion: 3.4
   NewCops: enable
 
-# We use standard as a linter and formatter instead of Rubocop.
+# We use standard as a linter and formatter instead Rubocop.
 # Also, we are explicitly disable all rubocop rules what
-# already enabled in `standard`. And standard-performance.
+# already enabled in standard. And standard-performance.
 
 # Standard rules. Style:
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/StringLiterals:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/HashSyntax:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/NestedParenthesizedCalls:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantRegexpArgument:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/PercentLiteralDelimiters:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantBegin:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/SuperWithArgsParentheses:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/Encoding:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/NumericLiteralPrefix:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantParentheses:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/EmptyMethod:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/SingleLineMethods:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/SafeNavigation:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RescueStandardError:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantSelf:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/TernaryParentheses:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantLineContinuation:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/SlicingWithRange:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/MultilineIfModifier:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantCondition:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/RedundantInterpolation:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/OrAssignment:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/ConditionalAssignment:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/ItAssignment:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/EachWithObject:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/GlobalStdStream:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/StringLiteralsInInterpolation:
   Enabled: false
 
-# Disabled as in `standard`.
+# Disabled as in standard.
 Style/HashAsLastArrayItem:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Style/Alias:
   Enabled: false
 
 # Standard rules. Layout:
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Layout/HashAlignment:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Layout/FirstArrayElementIndentation:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Layout/SpaceInsideStringInterpolation:
   Enabled: false
 
-# Enforced by `standard`. Disable.
+# Enforced by standard. Disable.
 Layout/DotPosition:
   Enabled: false
 
@@ -267,10 +267,6 @@ Lint/ConstantDefinitionInBlock:
 Lint/UselessTimes:
   Enabled: false
 
-# We are using empty blocks in specs as placeholders for future implementation.
-Lint/EmptyBlock:
-  Enabled: false
-
 # Standard-performance rules.
 
 # Enforced by standard-performance. Disable.
@@ -319,7 +315,7 @@ Style/WordArray:
 Style/Documentation:
   Enabled: false
 
-# Disable as in `standard`.
+# Disable as in standard.
 Style/ArgumentsForwarding:
   Enabled: false
 
@@ -353,7 +349,7 @@ RSpec/IndexedLet:
 RSpec/NamedSubject:
   Enabled: false
 
-# Ignore `system` and `requests` specs.
+# Ignore system and requests specs.
 RSpec/ExampleLength:
   Enabled: true
   Exclude:
@@ -367,7 +363,7 @@ RSpec/MultipleExpectations:
     - "spec/system/**/*.rb"
     - "spec/requests/**/*.rb"
 
-# Extend maximum example nesting from 3 to 5.
+# Extend maximum example group nesting from 3 to 5.
 RSpec/NestedGroups:
   Enabled: true
   Max: 5
@@ -392,17 +388,9 @@ RSpec/LeadingSubject:
 RSpec/LeakyConstantDeclaration:
   Enabled: true
 
-RSpec/LetSetup:
-  Enabled: false
-
-RSpec/LeakyLocalVariable:
-  Enabled: true
-
-RSpec/ReceiveMessages:
-  Enabled: false
-
-RSpec/EmptyExampleGroup:
-  Enabled: false
+# TODO: enable with update to rubocop-rspec 3.8.0
+#RSpec/LeakyLocalVariable:
+#  Enabled: true
 
 # Naming rules:
 
@@ -420,11 +408,6 @@ Naming/FileName:
     - "spec/support/selenium-webdriver.rb"
     - "spec/support/rspec-rebound.rb"
 
-# name_1, name_2, etc instead of name1, name2
-Naming/VariableNumber:
-  Enabled: true
-  EnforcedStyle: snake_case
-
 # Disabled syntax:
 
 # Disable shorthand hash syntax like: ({ x:, y: })
@@ -436,7 +419,7 @@ Style/DisableSyntax:
 
 # RSpec Rails rules:
 
-# This is a new RSpec default. Disable.
+# This is new RSpec default. Disable.
 RSpecRails/InferredSpecType:
   Enabled: false
 

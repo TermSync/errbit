@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
-gem "rails", "8.1.2"
+gem "rails", "8.1.1"
 
 gem "reactionview"
 gem "sprockets-rails"
@@ -80,7 +80,7 @@ group :development, :test do
   gem "rubocop-disable_syntax", require: false
   gem "rubocop-thread_safety", require: false
   gem "rubocop-factory_bot", require: false
-  gem "standard", "1.53.0", require: false
+  gem "standard", "1.52.0", require: false
   gem "faker"
   gem "factory_bot_rails"
   gem "brakeman", require: false
@@ -88,7 +88,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "listen", "~> 3.10"
+  gem "listen", "~> 3.5"
   gem "bundler-audit", require: false
 end
 

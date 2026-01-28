@@ -27,24 +27,24 @@ RSpec.describe User, type: :model do
     end
 
     it "requires uniq github login" do
-      user_1 = create(:user, github_login: "biow0lf")
-      expect(user_1.valid?).to eq(true)
+      user1 = create(:user, github_login: "biow0lf")
+      expect(user1.valid?).to eq(true)
 
-      user_2 = build(:user, github_login: "biow0lf")
-      user_2.save
-      expect(user_2.valid?).to eq(false)
+      user2 = build(:user, github_login: "biow0lf")
+      user2.save
+      expect(user2.valid?).to eq(false)
 
-      expect(user_2.errors[:github_login]).to eq(["has already been taken"])
+      expect(user2.errors[:github_login]).to eq(["has already been taken"])
     end
 
     it "allows blank / null github_login" do
-      user_1 = create(:user, github_login: " ")
-      expect(user_1.valid?).to eq(true)
+      user1 = create(:user, github_login: " ")
+      expect(user1.valid?).to eq(true)
 
-      user_2 = build(:user, github_login: " ")
-      user_2.save
+      user2 = build(:user, github_login: " ")
+      user2.save
 
-      expect(user_2.valid?).to eq(true)
+      expect(user2.valid?).to eq(true)
     end
 
     it "disables validations when reset password" do

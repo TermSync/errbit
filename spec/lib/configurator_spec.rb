@@ -10,73 +10,58 @@ RSpec.describe Configurator do
   end
 
   it "takes the first existing env, second item" do
-    result = described_class.run(two: ["VARTWO", "VARTHREE"])
-
+    result = Configurator.run(two: ["VARTWO", "VARTHREE"])
     expect(result.two).to eq("zipp")
   end
 
   it "takes the first existing env, first item" do
-    result = described_class.run(three: ["VARTHREE", "VARONE"])
-
+    result = Configurator.run(three: ["VARTHREE", "VARONE"])
     expect(result.three).to eq("zipp")
   end
 
   it "provides nothing for missing variables" do
-    result = described_class.run(four: ["VAREIGHTY"])
-
+    result = Configurator.run(four: ["VAREIGHTY"])
     expect(result.four).to eq(nil)
   end
 
   it "overrides existing variables" do
-    result = described_class.run(one: ["VARONE", ->(_values) { "oveRIIIDE" }])
-
+    result = Configurator.run(one: ["VARONE", ->(_values) { "oveRIIIDE" }])
     expect(result.one).to eq("oveRIIIDE")
   end
 
   it "overrides can refer to other values" do
-    result = described_class.run(one: ["VARONE", ->(values) { values[:one] }],
+    result = Configurator.run(one: ["VARONE", ->(values) { values[:one] }],
       three: ["VARTHREE"])
-
     expect(result.one).to eq("zoom")
   end
 
   it "extracts symbol values" do
     allow(ENV).to receive(:[]).with("MYSYMBOL").and_return(":asymbol")
-
-    result = described_class.run(mysymbol: ["MYSYMBOL"])
-
+    result = Configurator.run(mysymbol: ["MYSYMBOL"])
     expect(result.mysymbol).to eq(:asymbol)
   end
 
   it "extracts array values" do
     allow(ENV).to receive(:[]).with("MYARRAY").and_return("[one,two,three]")
-
-    result = described_class.run(myarray: ["MYARRAY"])
-
+    result = Configurator.run(myarray: ["MYARRAY"])
     expect(result.myarray).to eq(["one", "two", "three"])
   end
 
   it "extracts booleans" do
     allow(ENV).to receive(:[]).with("MYBOOLEAN").and_return("true")
-
-    result = described_class.run(myboolean: ["MYBOOLEAN"])
-
+    result = Configurator.run(myboolean: ["MYBOOLEAN"])
     expect(result.myboolean).to eq(true)
   end
 
   it "extracts numbers" do
     allow(ENV).to receive(:[]).with("MYNUMBER").and_return("0")
-
-    result = described_class.run(mynumber: ["MYNUMBER"])
-
+    result = Configurator.run(mynumber: ["MYNUMBER"])
     expect(result.mynumber).to eq(0)
   end
 
   it "parses empty variables" do
     allow(ENV).to receive(:[]).with("EMPTYVAR").and_return("")
-
-    result = described_class.run(emptyvar: ["EMPTYVAR"])
-
+    result = Configurator.run(emptyvar: ["EMPTYVAR"])
     expect(result.emptyvar).to eq("")
   end
 end
